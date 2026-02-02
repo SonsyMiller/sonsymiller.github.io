@@ -1,0 +1,268 @@
+body{
+    background-color: #2e003e;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    width: 100%;
+    height: 100px;
+    background-color: #1b0024;
+    display: flex;
+}
+#perfil-foto{
+    background-color: orange;
+    width: 100px;
+    height: 100px;
+    border: 3px solid black;
+    border-radius: 50px;
+    margin: 50px 0 0 20px;
+}
+
+#sobre{
+    color: #ffe1bd;
+    text-align: center;
+    margin: 20px 10px;
+}
+#sobre h1{
+    color: #ff6000;
+}
+
+
+#exp{
+    text-align: center;
+    color: #ffe1bd;
+    margin: 20px 10px;
+}
+#exp h1{
+    color: #ff6000;
+}
+#exp .habilidades{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+#exp .habilidade{
+    width: 300px;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+
+#tecnos{
+    text-align: center;
+    margin: 20px 10px;
+    color: #ffe1bd;
+}
+#tecnos h1{
+    color: #ff6000;
+}
+#tecnoContent{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+.tecno{
+    transition: all 0.3s ease-in-out;
+    margin: 10px;
+}
+.tecno:hover{
+    color: #ff9000;
+    transform: scale(1.05);
+}
+#tecnos img{
+    width: 100px;
+    height: 100px;
+}
+
+#projetos{
+    text-align: center;
+    margin: 20px 10px;
+    color: #ffe1bd;
+}
+#projetos h1{
+    color: #ff6000;
+}
+.projetoContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+.projeto{
+    position: relative;
+    min-width: 300px;
+    max-width: 400px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-size: cover;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    text-align: start;  
+}
+.projeto:hover{
+    transform: scale(1.05);
+}
+.projeto img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.projeto a img{
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+.projetoDesc{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+#Tabu-Lero{
+    color: #3a1100;
+}
+
+#contactos{
+    text-align: center;
+    margin: 20px 10px;
+    color: #ffe1bd;
+}
+#contactos h1{
+    color: #ff6000;
+}
+#contactos img{
+    width: 100px;
+    height: 100px;
+}
+#contactosContent{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+.contacto{
+    transition: all 0.3s ease-in-out;
+    margin: 20px;
+}
+.contacto:hover{
+    color: #ff9000;
+    transform: scale(1.05);
+}
+
+footer{
+    background-color: #1b0024;
+    color: #ff6000;
+    text-align: center;   
+}
+
+@media (max-width: 768px){
+    .header{
+    width: 100%;
+    height: 60px;
+    }
+    #perfil-foto{
+        width: 60px;
+        height: 60px;
+        margin: 20px 0 0 5px;
+    }
+    h1{
+        font-size: 25px;
+    }
+    h2{
+        font-size: 20px;
+    }
+    h3{
+        font-size: 15px;
+    }
+    p{
+        font-size: 13px;
+    }
+
+    #exp .habilidades{
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5px;
+        padding: 20px;
+    }
+    #exp .habilidade{
+        width: 100px;
+        height: 200px;
+        padding: 5px;
+    }
+
+    #tecnoContent{
+        grid-template-columns: 1fr 1fr;
+    }
+    #tecnos img{
+        width: 50px;
+        height: 50px;
+    }
+
+    .projetoContainer{
+        display: flex;
+        flex-direction: column;
+    }
+    .projeto{
+        min-width: 100px;
+        max-width: 400px;
+        height: 500px;
+    }
+    #Tabu-Lero{
+        color: #ffe1bd;
+    }
+
+    #contactos img{
+        width: 50px;
+        height: 50px;
+    }
+    #contactosContent{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media (max-width: 500px){
+    #exp .habilidades{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 20px;
+    }
+    #exp .habilidade{
+        width: 130px;
+        height: 200px;
+        padding: 5px;
+    }
+}
+@media (max-width: 380px){
+    #exp .habilidades{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 20px;
+    }
+}
+@media (max-width: 900px)
+{
+    #exp .habilidades{
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+        padding: 20px;
+    }
+    #exp .habilidade{
+        width: 350px;
+        height: 200px;
+        padding: 5px;
+    }
+    .projeto{
+        min-width: 100px;
+        max-width: 400px;
+        height: 500px;
+    }
+    #Tabu-Lero{
+        color: #ffe1bd;
+    }
+}
