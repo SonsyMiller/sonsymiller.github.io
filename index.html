@@ -3,20 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Myage</title>
 </head>
 <body>
     <header class="header">
         <div id="perfil-fotov"></div>
+        <div class="headerCont">
+            <nav>
+                <a href="#sobre">Sobre</a>
+                <a href="#exp">Habilidades</a>
+                <a href="#tecnos">Tecnologias</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#contactos">Contatos</a>
+            </nav>
+        </div>
     </header>
 
     <section id="sobre">
         <h1>Sobre mim</h1>
         <hr>
-        <p>Sou Myage (Miller), sou estudante de programação, GameDev e GameDesign.</p>
-        <p>Tenho experiência em desenvolvimento WEB com linguagens como HTML, CSS E JavaScript</p>
-        <p>Trabalho com a engine Unity para meus projetos de jogos.</p>
+        <p class="reveal">Sou Myage (Miller), estudante de Programação, GameDev e Game Design.</p>
+        <p class="reveal">Tenho experiência com desenvolvimento web utilizando HTML, CSS e JavaScript, criando páginas funcionais, organizadas e responsivas.</p>
+        <p class="reveal">Atualmente trabalho com a engine Unity no desenvolvimento dos meus projetos de jogos, focando tanto na parte técnica quanto na parte criativa <span class="blinkPoint">|</span></p>
     </section>
 
     <section id="exp">
@@ -24,20 +34,20 @@
         <hr>
         <div class="habilidades">
             <div class="habilidade">
-                <h3>Unity</h3>
-                <p>Conhecimentos sobre a engine gráfica Unity</p>
+                <h3 class="reveal">Unity</h3>
+                <p class="reveal">Experiência prática com a engine Unity, incluindo lógica de jogo, sistemas, UI e prototipagem.</p>
             </div>
             <div class="habilidade">
-                <h3>Programação</h3>
-                <p>Conhecimentos de programação com as linguagens C# e Python</p>
+                <h3 class="reveal">Programação</h3>
+                <p class="reveal">Conhecimento em C# e Python, aplicando lógica, organização de código e resolução de problemas.</p>
             </div>
             <div class="habilidade">
-                <h3>Desenvolvimento WEB</h3>
-                <p>Conhecimentos em HTML e CSS para a criação de páginas WEB</p>
+                <h3 class="reveal">Desenvolvimento Web</h3>
+                <p class="reveal">Criação de páginas web utilizando HTML, CSS e fundamentos de JavaScript.</p>
             </div>
             <div class="habilidade">
-                <h3>Inglês</h3>
-                <p>Conhecimento de inglês em nível básico/intermediário</p>
+                <h3 class="reveal">Inglês</h3>
+                <p class="reveal">Leitura técnica e comunicação em nível básico/intermediário.</p>
             </div>
         </div>
     </section>
@@ -47,40 +57,58 @@
         <hr>
         <div id="tecnoContent">
             <di class="tecno">
-                <img src="assets/img/icons/Unity.png" alt="Unity Software">
-                <p>Unity</p>
+                <div class="reveal">
+                    <img class="reveal" src="assets/img/icons/Unity.png" alt="Unity Software">
+                    <p>Unity</p>
+                </div>
             </di>
             <di class="tecno">
-                <img src="assets/img/icons/Notion.png" alt="Notion">
-                <p>Notion</p>
+                <div class="reveal">
+                    <img src="assets/img/icons/Notion.png" alt="Notion">
+                    <p>Notion</p>
+                </div>
             </di>
             <di class="tecno">
-                <img src="assets/img/icons/Figma.png" alt="Figam">
-                <p>Figam</p>
+                <div class="reveal">
+                    <img src="assets/img/icons/Figma.png" alt="Figam">
+                    <p>Figma</p>
+                </div>
             </di>
             <di class="tecno">
-                <img src="assets/img/icons/HTML.png" alt="HTML5">
-                <p>HTML</p>
+                <div class="reveal">
+                    <img src="assets/img/icons/HTML.png" alt="HTML5">
+                    <p>HTML</p>
+                </div>
             </di>
             <di class="tecno">
-                <img src="assets/img/icons/CSS.png" alt="CSS3">
-                <p>CSS</p>
+                <div class="reveal">
+                    <img src="assets/img/icons/CSS.png" alt="CSS3">
+                    <p>CSS</p>
+                </div>
             </di>
             <di class="tecno"> 
-                <img src="assets/img/icons/JavaScript.png" alt="JavaScript">
-                <p>JavaScript</p>
+                <div class="reveal">
+                    <img src="assets/img/icons/JavaScript.png" alt="JavaScript">
+                    <p>JavaScript</p>
+                </div>
             </di>
             <di class="tecno">
-                <img src="assets/img/icons/Python.png" alt="Python">
-                <p>Python</p>
+                <div class="reveal">
+                    <img src="assets/img/icons/Python.png" alt="Python">
+                    <p>Python</p>
+                </div>
             </di>
             <di class="tecno">
-                <img src="assets/img/icons/CSharp.png" alt="CSharp">
-                <p>C#</p>
+                <div class="reveal">
+                    <img src="assets/img/icons/CSharp.png" alt="CSharp">
+                    <p>C#</p>
+                </div>
             </di>
             <di class="tecno">
-                <img src="assets/img/icons/Discord.png" alt="Discord">
-                <p>Discord Developers</p>
+                <div class="reveal">
+                    <img src="assets/img/icons/Discord.png" alt="Discord">
+                    <p>Discord (Comunidades e Bots)</p>
+                </div>
             </di>
         </div>
     </section>
@@ -91,22 +119,22 @@
         <section class="categ" id="pessoais">
             <h2>Pessoais</h2>
             <div class="projetoContainer">
-                <div class="projeto" id="Blink">
+                <div class="projeto reveal" id="Blink">
                     <img src="assets/img/proj/BLINK_icon.jpg" alt="Blink">
                     <div class="projetoDesc">
                         <h3>Blink</h3>
-                        <p class="slogan">quantas vezes eu preciso "piscar" até conseguir sair...?</p>
-                        <p>Blink é um jogo onde você precisa piscar o mínimo possível para alternar entre dimensões e escapar das salas, não ultrapasse o limite ou você perderá, use de forma eficiente os seus "blinks", mas cuidado há salas que escondem segredo entre as dimensões.</p>
+                        <p class="slogan">Quantas vezes preciso “piscar” para conseguir escapar...?</p>
+                        <p>Blink é um jogo onde o jogador deve alternar entre dimensões utilizando uma quantidade limitada de “blinks”. Cada uso precisa ser estratégico: ultrapassar o limite significa perder. Algumas salas escondem segredos entre dimensões, exigindo observação e planejamento para avançar.</p>
                         <p>Em desenvolvimento</p>
                         <a href="https://mayage.itch.io/blink" target="_blank"><img src="assets/img/icons/Itchio.png" alt="itchio"></a>
                     </div>
                 </div>
-                <div class="projeto" id="SemParar">
+                <div class="projeto reveal" id="SemParar">
                     <img src="assets/img/proj/SemParar.png" alt="Blink">
                     <div class="projetoDesc">
                         <h3>Sem Parar</h3>
-                        <p>Um runner de habilidades e reflexos</p>
-                        <p>Sem Parar é um runner que testa as habilidades reflexos dos jogadores em altas velocidades e curto tempo de reação.</p>
+                        <p>Um runner focado em habilidade e reflexos.</p>
+                        <p>Sem Parar é um jogo de ritmo acelerado que desafia os reflexos do jogador em alta velocidade e com pouco tempo de reação. Cada erro custa caro — manter o foco é essencial.</p>
                         <p>Em desenvolvimento</p>
                         <a href="https://mayage.itch.io/sem-parar" target="_blank"><img src="assets/img/icons/Itchio.png" alt="itchio"></a>
                     </div>
@@ -116,11 +144,11 @@
         <section class="categ" id="colab">
             <h2>Participações</h2>
             <div class="projetoContainer">
-                <div class="projeto" id="Tabu-Lero">
+                <div class="projeto reveal" id="Tabu-Lero">
                     <img src="assets/img/proj/TabuLero.jpg" alt="TabuLero">
                     <div class="projetoDesc">
                         <h3>Tabu-Leru</h3>
-                        <p>Jogo feito para CTRL ALT JAM - HALLOWEEN EDITION.</p>
+                        <p>Desenvolvido para a CTRL ALT JAM – Halloween Edition(2024).</p>
                         <p>Em um tabuleiro cheio de escolhas, seu objetivo é simples: chegar ao outro lado. Mas cuidado, cada erro define seu caminho. Existe um padrão oculto – desvendá-lo tornará sua jornada mais fácil!</p>
                         <a href="https://discpato.itch.io/tabu-lero" target="_blank"><img src="assets/img/icons/Itchio.png" alt="itchio"></a>
                     </div>
@@ -130,32 +158,44 @@
     </section>
 
     <section id="contactos">
-        <h1>Contactos e Links</h1>
+        <h1>Contatos e Links</h1>
         <hr>
         <div id="contactosContent">
             <div class="contacto">
-                <a href="https://mayage.itch.io/" target="_blank"><img src="assets/img/icons/Itchio1.png" alt="Itchio"></a>
-                <p>Myage</p>
+                <div class="revealr">
+                    <a href="https://mayage.itch.io/" target="_blank"><img src="assets/img/icons/Itchio1.png" alt="Itchio"></a>
+                    <p>Myage</p>
+                </div>
             </div>
             <div class="contacto">
-                <img src="assets/img/icons/Discord.png" alt="Discord">
-                <p>MyAge/alley5.</p>
+                <div class="revealr">
+                    <img src="assets/img/icons/Discord.png" alt="Discord">
+                    <p>MyAge/alley5.</p>
+                </div>
             </div>
             <div class="contacto">
-                <a href="https://github.com/SonsyMiller/" target="_blank"><img src="assets/img/icons/GitHub.png" alt="GitHub"></a>
-                <p>SonsyMiller</p>
+                <div class="revealr">
+                    <a href="https://github.com/SonsyMiller/" target="_blank"><img src="assets/img/icons/GitHub.png" alt="GitHub"></a>
+                    <p>SonsyMiller</p>
+                </div>
             </div>
             <div class="contacto">
-                <a href="https://gamejolt.com/@MillerMyage" target="_blank"><img src="assets/img/icons/GameJolt.png" alt="GameJolt"></a>
-                <p>Myage</p>
+                <div class="revealr">
+                    <a href="https://gamejolt.com/@MillerMyage" target="_blank"><img src="assets/img/icons/GameJolt.png" alt="GameJolt"></a>
+                    <p>Myage</p>
+                </div>
             </div>
         </div>
     </section>
+
+    <h1>GAME OVER<span class="blinkPoint">|</span></h1>
 
     <footer>
         <div class="footerContent">
             <p>&copy; 2026 Miller Gil.</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

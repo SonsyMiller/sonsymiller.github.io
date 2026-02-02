@@ -1,15 +1,58 @@
+html {
+    scroll-behavior: smooth;
+}
 body{
     background-color: #2e003e;
     margin: 0;
     display: flex;
     flex-direction: column;
+    font-family: 'Pixelify Sans', sans-serif;
+}
+h1, h2, h3{
+    font-family: 'Press Start 2P', cursive;
+}
+h1{
+    color: #ff6000;
+    text-align: center;
+}
+
+.reveal{
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.revealr{
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.revealr.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.blinkPoint{
+    animation: blink 1s infinite;
+}
+@keyframes blink{
+    50%{
+        opacity: 0;
+    }
 }
 
 .header{
     width: 100%;
     height: 100px;
     background-color: #1b0024;
+    background-image: url(assets/img/proj/Portfolio_Text_Big.png);
+    background-repeat: no-repeat;
+    background-position: 30%;
     display: flex;
+    justify-content: space-between;
 }
 #perfil-foto{
     background-color: orange;
@@ -19,14 +62,24 @@ body{
     border-radius: 50px;
     margin: 50px 0 0 20px;
 }
+.headerCont{
+    align-items: center;
+    display: flex;
+}
+.header nav a{
+    color: #ff9000;
+    padding: 0 10px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+.header nav a:hover{
+    color: #ff6000;
+}
 
 #sobre{
     color: #ffe1bd;
     text-align: center;
     margin: 20px 10px;
-}
-#sobre h1{
-    color: #ff6000;
 }
 
 
@@ -35,20 +88,25 @@ body{
     color: #ffe1bd;
     margin: 20px 10px;
 }
-#exp h1{
-    color: #ff6000;
-}
 #exp .habilidades{
     display: grid;
+    width: 100%;
+    height: 250px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    overflow: hidden;
     gap: 10px;
 }
 #exp .habilidade{
     width: 300px;
     height: 200px;
-    background-color: rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 10px;
+    transition: all 0.3s ease;
+}
+#exp .habilidade:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+    cursor: context-menu;
 }
 
 
@@ -56,9 +114,6 @@ body{
     text-align: center;
     margin: 20px 10px;
     color: #ffe1bd;
-}
-#tecnos h1{
-    color: #ff6000;
 }
 #tecnoContent{
     display: grid;
@@ -83,9 +138,6 @@ body{
     margin: 20px 10px;
     color: #ffe1bd;
 }
-#projetos h1{
-    color: #ff6000;
-}
 .projetoContainer{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -97,20 +149,22 @@ body{
     min-width: 300px;
     max-width: 400px;
     padding: 5px;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: #1b0024;
     background-size: cover;
     border-radius: 10px;
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: start;  
 }
 .projeto:hover{
-    transform: scale(1.05);
+    transform: translateY(-20px);
+    box-shadow: 0 10px 5px #1b0024;
 }
 .projeto img{
     width: 100%;
     height: auto;
     object-fit: cover;
+    border-radius: 10px;
 }
 .projeto a img{
     width: 30px;
@@ -128,14 +182,14 @@ body{
 #Tabu-Lero{
     color: #3a1100;
 }
+#Blink{
+    color: #ff6000;
+}
 
 #contactos{
     text-align: center;
     margin: 20px 10px;
     color: #ffe1bd;
-}
-#contactos h1{
-    color: #ff6000;
 }
 #contactos img{
     width: 100px;
@@ -153,6 +207,9 @@ body{
 .contacto:hover{
     color: #ff9000;
     transform: scale(1.05);
+}
+.contacto:hover p{
+    animation: blink 1s infinite;
 }
 
 footer{
@@ -181,7 +238,7 @@ footer{
         font-size: 15px;
     }
     p{
-        font-size: 13px;
+        font-size: 14px;
     }
 
     #exp .habilidades{
