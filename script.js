@@ -8,7 +8,7 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, {
-    threshold: 0.2
+    threshold: 0.3
 });
 
 reveals.forEach(reveal => {
@@ -17,3 +17,4 @@ reveals.forEach(reveal => {
 revealsr.forEach(revealr => {
     observer.observe(revealr);
 })
+
