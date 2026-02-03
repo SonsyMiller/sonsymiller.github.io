@@ -16,6 +16,33 @@ h1{
     text-align: center;
 }
 
+#emote{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    color: #ff6000;
+}
+#emote p{
+    overflow: hidden;
+    border-right: .15rem solid #ff6000;
+    font-size: 18px;
+    white-space: nowrap;
+    letter-spacing: .1rem;
+    animation: digitando 4s steps(70, end) forwards, blink-caret .75s step-end infinite;/*44 passos para 44 caracteres*/
+}
+#emote p span{
+    opacity: 0;
+}
+@keyframes digitando {
+    from { width: 0 }
+    to { width: 747px }
+}
+@keyframes blink-caret{
+    from, to { border-color: transparent }
+    50% { border-color: #FF9F1A }
+}
+
 .reveal{
     opacity: 0;
     transform: translateY(40px);
@@ -56,23 +83,65 @@ h1{
 }
 #perfil-foto{
     background-color: orange;
+    background-image: url(assets/img/proj/Perfil.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100px;
     height: 100px;
-    border: 3px solid black;
+    border: 3px solid #ff6000;
     border-radius: 50px;
     margin: 50px 0 0 20px;
+    animation: luz 3s infinite;
+}
+@keyframes luz{
+    20%{
+        border-color: #ff9000;
+    }
+    40%{
+    border-color: #ff6000;
+    }
+    45%{
+        border-color: #ff9000;
+    }
+    50%{
+        border-color: #ff6000;
+    }
+
 }
 .headerCont{
-    align-items: center;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
 }
-.header nav a{
+/* Esconde o checkbox */
+.menu-toggle {
+    display: none;
+}
+.nav-links {
+    display: flex;
+    gap: 10px;
+}
+/* Botão hamburguer */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+.hamburger span{
+    width: 25px;
+    height: 3px;
+    background: #ff6000;
+    transition: 0.3s;
+}
+.header a{
     color: #ff9000;
     padding: 0 10px;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
 }
-.header nav a:hover{
+.header a:hover{
     color: #ff6000;
 }
 
@@ -93,6 +162,7 @@ h1{
     width: 100%;
     height: 250px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    place-items: center;
     overflow: hidden;
     gap: 10px;
 }
@@ -118,6 +188,7 @@ h1{
 #tecnoContent{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    place-items: center;
     gap: 10px;
 }
 .tecno{
@@ -198,6 +269,7 @@ h1{
 #contactosContent{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    place-items: center;
     gap: 10px;
 }
 .contacto{
@@ -219,15 +291,83 @@ footer{
 }
 
 @media (max-width: 768px){
+    body{
+        max-width: 720px;
+    }
     .header{
-    width: 100%;
-    height: 60px;
+        width: 100%;
+        height: 60px;
+        background-position: 100px;
+        background-size: 200px;
+    }
+    #sobre{
+        margin: 0;
     }
     #perfil-foto{
         width: 60px;
         height: 60px;
-        margin: 20px 0 0 5px;
+        margin: 20px 0 0 200px;
     }
+    .hamburger {
+        display: flex;
+        margin-right: 10px;
+    }
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #1b0024;
+        flex-direction: column;
+        z-index: 9999;
+        width: 200px;
+        padding: 20px;
+        gap: 15px;
+        display: none;
+    }
+    /* Quando checkbox estiver marcado */
+    #menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+    /* Animação virar X */
+    #menu-toggle:checked + .hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    #menu-toggle:checked + .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+    #menu-toggle:checked + .hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+    #menu-toggle:checked + .hamburger span:nth-child(4) {
+        opacity: 0;
+    }
+    #menu-toggle:checked + .hamburger span:nth-child(5) {
+        opacity: 0;
+    }
+    #menu-toggle:checked + .hamburger span:nth-child(6) {
+        opacity: 0;
+    }
+
+    #emote{
+        text-align: center;
+        margin: 0;
+    }
+    #emote p{
+        border: none;
+        font-size: 12px;
+        white-space: wrap;
+        animation: digitando 4s steps(70, end) forwards, blink-caret .75s step-end infinite;/*44 passos para 44 caracteres*/
+    }
+    #emote p span{
+        opacity: 1;
+    }
+    @keyframes digitando{
+    }
+    @keyframes blink-caret{
+        
+    }
+    
+
     h1{
         font-size: 25px;
     }
@@ -241,17 +381,23 @@ footer{
         font-size: 14px;
     }
 
+    #exp{
+        margin: 0;
+    }
     #exp .habilidades{
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 5px;
-        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        height: 500px;
     }
     #exp .habilidade{
-        width: 100px;
-        height: 200px;
+        width: 100%;
+        height: 100px;
         padding: 5px;
     }
 
+    #tecnos{
+        margin: 0;
+    }
     #tecnoContent{
         grid-template-columns: 1fr 1fr;
     }
@@ -260,6 +406,9 @@ footer{
         height: 50px;
     }
 
+    #projetos{
+        margin: 0;
+    }
     .projetoContainer{
         display: flex;
         flex-direction: column;
@@ -273,6 +422,9 @@ footer{
         color: #ffe1bd;
     }
 
+    #contactos{
+        margin: 0;
+    }
     #contactos img{
         width: 50px;
         height: 50px;
@@ -281,38 +433,15 @@ footer{
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
-@media (max-width: 500px){
-    #exp .habilidades{
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        padding: 20px;
-    }
-    #exp .habilidade{
-        width: 130px;
-        height: 200px;
-        padding: 5px;
-    }
-}
-@media (max-width: 380px){
-    #exp .habilidades{
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        padding: 20px;
-    }
-}
 @media (max-width: 900px)
 {
-    #exp .habilidades{
-        grid-template-columns: 1fr 1fr;
-        gap: 5px;
-        padding: 20px;
+    body{
+        max-width: 100%;
     }
-    #exp .habilidade{
-        width: 350px;
-        height: 200px;
-        padding: 5px;
+    .header{
+        width: 100%;
+        height: 100px;
+        background-position: 0%;
     }
     .projeto{
         min-width: 100px;
